@@ -1,0 +1,19 @@
+{
+  "name": "drip-client",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "forever index.js"
+  },
+  "author": "Chris Occhipinti",
+  "license": "MIT",
+  "dependencies": {
+    "external-ip": "^0.2.4",
+    "forever": "^0.15.2",
+    "ipp": "^1.0.1",
+    "moment": "^2.13.0",
+    "pdfkit": "^0.7.2",
+    "socket.io-client": "^1.4.6"
+  }
+}
