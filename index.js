@@ -39,18 +39,21 @@ socket.on('order', function(data) {
 
     doc.font('Helvetica', 8).text('http://getdrip.io', 46, 180);
 
-    doc.output(function(pdf) {
-      var msg = {
+    var buffers = [];
+    doc.on('data', buffers.push.bind(buffers));
+    doc.on('end', function () {
+      var file = {
         "operation-attributes-tag": {
           "requesting-user-name": "",
           "job-name": "",
           "document-format": "application/pdf"
         },
-        data: pdf
+        data: Buffer.concat(buffers)
       };
-      printer.execute("Print-Job", msg, function(err, res) {
+      printer.execute("Print-Job", file, function(err, res) {
         console.log(res);
       });
     });
+    doc.end();
   }
 });

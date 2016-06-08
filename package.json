@@ -9,7 +9,6 @@
   "author": "Chris Occhipinti",
   "license": "MIT",
   "dependencies": {
-    "external-ip": "^0.2.4",
     "forever": "^0.15.2",
     "ipp": "^1.0.1",
     "moment": "^2.13.0",
